@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+<div class="content">
+  <div class="buttons_container">
+    <div class="buttons">
+      <input type="button" value="Умножить матрицы" class="button green"/><br/>
+      <input type="button" value="Очистить матрицы" class="button gray"/><br/>
+      <input type="button" value="Поменять матрицы местами" class="button gray"/><br/>
+      <input type="radio" name="matrix" value="mA" class="button">Матрица A
+      <input type="radio" name="matrix" value="mB" class="button">Матрица B<br/>
+      <input type="button" value="Добавить" class="button gray"/>
+      <input type="button" value="Удалить" class="button gray"/><span>строку</span><br/>
+      <input type="button" value="Добавить" class="button gray"/>
+      <input type="button" value="Удалить" class="button gray"/><span>столбец</span>
+      <p class="error"></p>
+      <!--<span class="button nonaccess">Недоступность</span>-->
+    </div>
+  </div>
+  <div class="table_m">
+    <div class="table_content">
+
+      <div class="matrix_c">
+        <div class="table_row">
+          <div class="scope left"></div>
+          <div id="MatrixC">
+            <script type="text/javascript">
+              for (var i = 1; i <= matrixCRows; i++) {
+                document.write(insertRow('C', i));
+                for (var j = 1; j <= matrixCCells; j++) {
+                  document.write(insertCell('C', i, j));
+                }
+                document.write("</div>");
+              }
+            </script>
+          </div>
+          <div class="scope right"></div>
+        </div>
+      </div>
+
+      <div class="matrix_a">
+        <div class="table_row">
+          <div class="scope left"></div>
+          <div id="MatrixA">
+            <script type="text/javascript">
+              for (var i = 1; i <= matrixARows; i++) {
+                document.write(insertRow('A', i));
+                for (var j = 1; j <= matrixACells; j++) {
+                  document.write(insertCell('A', i, j));
+                }
+                document.write("</div>");
+              }
+            </script>
+          </div>
+          <div class="scope right"></div>
+        </div>
+      </div>
+      <br />
+      <div class="matrix_b">
+        <div class="table_row">
+          <div class="scope left"></div>
+          <div id="MatrixB">
+            <script type="text/javascript">
+              for (var i = 1; i <= matrixBRows; i++) {
+                document.write(insertRow('B', i));
+                for (var j = 1; j <= matrixBCells; j++) {
+                  document.write(insertCell('B', i, j));
+                }
+                document.write("</div>");
+              }
+            </script>
+          </div>
+          <div class="scope right"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
