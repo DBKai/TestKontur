@@ -180,6 +180,7 @@ body {
   box-shadow: 0 0 0 2px #5199db;
 }
 
-.error {
+#error {
   color: #ff0000;
+  display: none;
 }

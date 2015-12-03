@@ -10,8 +10,8 @@
 <div class="content">
   <div class="buttons_container">
     <div class="buttons">
-      <input type="button" value="Умножить матрицы" class="button green"/><br/>
-      <input type="button" value="Очистить матрицы" class="button gray"/><br/>
+      <input type="button" value="Умножить матрицы" class="button green" onclick="Multiplication_Click('matrix')"/><br/>
+      <input type="button" value="Очистить матрицы" class="button gray" onclick="Multiplication_Click('clear_matrix')"/><br/>
       <input type="button" value="Поменять матрицы местами" class="button gray"/><br/>
       <input type="radio" name="matrix" value="mA" class="button">Матрица A
       <input type="radio" name="matrix" value="mB" class="button">Матрица B<br/>
@@ -19,7 +19,7 @@
       <input type="button" value="Удалить" class="button gray"/><span>строку</span><br/>
       <input type="button" value="Добавить" class="button gray"/>
       <input type="button" value="Удалить" class="button gray"/><span>столбец</span>
-      <p class="error"></p>
+      <span id="error">Error. Please try again letter.</span>
       <!--<span class="button nonaccess">Недоступность</span>-->
     </div>
   </div>

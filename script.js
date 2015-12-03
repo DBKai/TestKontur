@@ -19,3 +19,16 @@ function insertRow(matrix, x) {
 
   return "<div class=\"matrix_row\" id=\"" + id + "\">";
 }
+
+function Multiplication_Click(control) {
+  if (control === 'matrix') {
+    document.getElementById('error').style.display = 'block';
+  } else {
+    document.getElementById('error').style.display = 'none';
+  }
+}
+
+function addRow(matrix) {
+
+  
+}
