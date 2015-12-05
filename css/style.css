@@ -17,6 +17,8 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+/* Воспользовался сервисом http://www.fontsquirrel.com/tools/webfont-generator
+ * для того чтобы из одного TTF файла сделать полный комплект файлов для работы со шрифтовыми иконками */
 
 .content {
   position: absolute;
@@ -110,11 +112,11 @@ body {
   text-align: center;
   text-decoration: none;
   font: 14px/100% wf_SegoeUINormal;
-  padding: .5em 2em .55em;
-  margin: .50em .5em;
+  padding: .5em .6em;
+  margin: .4em .2em;
+  border-radius: .2em;
   -webkit-border-radius: .2em;
   -moz-border-radius: .2em;
-  border-radius: .2em;
 }
 /* Наведение */
 .button:hover {
@@ -123,10 +125,11 @@ body {
 
 .green {
   border: solid 1px rgba(22,80,7,0.2);
-  background: #4ba91d;
-  background: -webkit-gradient(linear, left top, left bottom, from(#4ba91d), to(#37910b));
-  background: -moz-linear-gradient(top,  #4ba91d,  #37910b);
-  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#4ba91d', endColorstr='#37910b');
+  background: #4ba91d; /* Old browsers */
+  background: -webkit-gradient(linear, left top, left bottom, from(#4ba91d), to(#37910b)); /* Safari, Google Chrome*/
+  background: -moz-linear-gradient(top,  #4ba91d,  #37910b); /* Mozilla Firefox */
+  background: linear-gradient(to top, #4ba91d, #37910b); /* Internet Explorer 9+ version*/
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#4ba91d', endColorstr='#37910b'); /* Internet Explorer 6-8 version */
 }
 /* Недоступность */
 .nonaccess {
@@ -140,6 +143,7 @@ body {
   background: #35840e;
   background: -webkit-gradient(linear, left top, left bottom, from(#3b8d13), to(#307e0a));
   background: -moz-linear-gradient(top,  #3b8d13,  #307e0a);
+  background: linear-gradient(to top, #3b8d13, #307e0a);
   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#3b8d13', endColorstr='#307e0a');
 }
 /* Получен фокус */
@@ -159,6 +163,7 @@ body {
   background: #fefefe;
   background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#ebebeb));
   background: -moz-linear-gradient(top,  #fefefe,  #ebebeb);
+  background: linear-gradient(to top, #fefefe, #ebebeb);
   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#ebebeb');
 }
 /* Наведение */
@@ -167,6 +172,7 @@ body {
   background: #f2f2f2;
   background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#dedede));
   background: -moz-linear-gradient(top,  #f2f2f2,  #dedede);
+  background: linear-gradient(to top, #f2f2f2, #dedede);
   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f2f2', endColorstr='#dedede');
 }
 /* Нажатая */
@@ -183,4 +189,12 @@ body {
 #error {
   color: #ff0000;
   display: none;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-top: 70px solid transparent;
+  border-left: 140px solid #ff5a00;
+  border-bottom: 70px solid transparent;
 }
