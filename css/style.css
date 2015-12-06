@@ -122,6 +122,11 @@ body {
 .button:hover {
   text-decoration: none;
 }
+/* Получен фокус */
+.button:focus {
+  box-shadow: 0 0 0 2px #5199db;
+  /*border: solid 1px rgb(81,153,219);*/
+}
 
 .green {
   border: solid 1px rgba(22,80,7,0.2);
@@ -145,10 +150,6 @@ body {
   background: -moz-linear-gradient(top,  #3b8d13,  #307e0a);
   background: linear-gradient(to top, #3b8d13, #307e0a);
   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#3b8d13', endColorstr='#307e0a');
-}
-/* Получен фокус */
-.green:focus {
-  box-shadow: 0 0 0 2px #5199db;
 }
 /* Нажатая */
 .green:active {
@@ -180,10 +181,6 @@ body {
   border: solid 1px rgba(0,0,0,0.35);
   background: #d9d9d9;
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.15);
-}
-/* Получен фокус */
-.gray:focus {
-  box-shadow: 0 0 0 2px #5199db;
 }
 
 #error {
