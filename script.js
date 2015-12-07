@@ -2,6 +2,7 @@ var matrixARows = 3;
 var matrixAColumns = 3;
 var matrixBRows = 3;
 var matrixBColumns = 3;
+var currentMatrix = 'A';
 
 function CreateMatrix(matrixName, rows, columns) {
   for (var i = 1; i <= rows; i++) {
@@ -56,25 +57,37 @@ function Multiplication_Click(control) {
   }
 }
 
-function AddRow(obj) {
-  var matrix = obj.id === 'AddARow' ? 'A' : 'B';
-  var currentRows = matrix === 'A' ? matrixARows : matrixBRows;
-  var currentColumns = matrix === 'A' ? matrixAColumns : matrixBColumns;
+function AddRow() {
+  var currentRows = currentMatrix === 'A' ? matrixARows : matrixBRows;
+  var currentColumns = currentMatrix === 'A' ? matrixAColumns : matrixBColumns;
   currentRows++;
-  var matrix_row =  matrix === 'A' ? 'matrix_rowA' : 'matrix_rowB';
+  var matrix_row =  currentMatrix === 'A' ? 'matrix_rowA' : 'matrix_rowB';
   var id = matrix_row + currentRows;
   var row = document.createElement('div');
   row.className = 'matrix_row';
   row.id = id;
-  row.innerHTML = getMoreColumns(matrix, currentRows, currentColumns);
+  row.innerHTML = getMoreColumns(currentMatrix, currentRows, currentColumns);
   var table = document.getElementById(matrix_row + (currentRows - 1));
   var cont = table.parentNode;
   cont.appendChild(row); // тогда добавляем в конец родительского элемента
-  if (matrix === 'A') {
+  if (currentMatrix === 'A') {
     matrixARows++;
   } else {
     matrixBRows++;
   }
+  console.log("Add Row Matrix" + currentMatrix);
+}
+
+function AddColumn() {
+  console.log("Add Column Matrix" + currentMatrix);
+}
+
+function RemoveRow() {
+  console.log("Remove Row Matrix" + currentMatrix);
+}
+
+function RemoveColumn() {
+  console.log("Remove Column Matrix" + currentMatrix);
 }
 
 function getMoreColumns(matrix, rows, columns) {
@@ -83,8 +96,8 @@ function getMoreColumns(matrix, rows, columns) {
     htmlString += insertColumn(matrix, rows, i);
   }
   return htmlString;
-};
+}
 
-function AddColumn() {
-
+function changeMatrix(obj) {
+  currentMatrix = obj.value[1];
 }

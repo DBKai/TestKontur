@@ -23,18 +23,18 @@
       <br/>
 
       <div style="width: 100%; height: 50px;">
-        <input type="radio" name="matrix" value="mA" class="button">Матрица A
-        <input type="radio" name="matrix" value="mB" class="button">Матрица B<br/>
+        <input type="radio" name="matrix" value="mA" onchange="changeMatrix(this);" checked><label>Матрица A</label>
+        <input type="radio" name="matrix" value="mB" onchange="changeMatrix(this);" ><label>Матрица B</label><br/>
       </div>
       <div>
-        <button id="AddARow" class="button gray" onclick="AddRow(this);"><i class="icon icon-plus"></i>Добавить</button>
-        <button id="AddAColumn" class="button gray" onclick="AddColumn(this);"><i class="icon icon-minus"></i>Удалить
+        <button id="AddARow" class="button gray" onclick="AddRow();"><i class="icon icon-plus"></i>Добавить</button>
+        <button id="AddAColumn" class="button gray" onclick="RemoveRow();"><i class="icon icon-minus"></i>Удалить
         </button>
         <span>строку</span><br/>
       </div>
       <div>
-        <button id="AddBRow" class="button gray" onclick="AddRow(this);"><i class="icon icon-plus"></i>Добавить</button>
-        <button id="AddBColumn" class="button gray" onclick="AddColumn(this);"><i class="icon icon-minus"></i>Удалить
+        <button id="AddBRow" class="button gray" onclick="AddColumn();"><i class="icon icon-plus"></i>Добавить</button>
+        <button id="AddBColumn" class="button gray" onclick="RemoveColumn();"><i class="icon icon-minus"></i>Удалить
         </button>
         <span>столбец</span><br/>
       </div>
