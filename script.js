@@ -35,16 +35,16 @@ function ClearMatrix() {
   }
 }
 
-function insertColumn(matrix, x, y) {
-  var id = "matrix_cell" + matrix + x + y;
-  var placeholder = matrix.toLowerCase() + x + "." + y;
+function insertColumn(matrix, rows, columns) {
+  var id = "matrix_cell" + matrix + rows + columns;
+  var placeholder = matrix.toLowerCase() + rows + "." + columns;
   var disabled = matrix === 'C' ? "disabled" : "";
 
   return "<input type=\"text\" class=\"matrix_cell\" placeholder=\"" + placeholder + "\" size=\"16\" id=\"" + id + "\" value=\"\" autocomplete=\"off\"" + disabled + ">";
 }
 
-function insertRow(matrix, x) {
-  var id = "matrix_row" + matrix + x;
+function insertRow(matrix, rows) {
+  var id = "matrix_row" + matrix + rows;
 
   return "<div class=\"matrix_row\" id=\"" + id + "\">";
 }
@@ -66,7 +66,7 @@ function AddRow() {
   var row = document.createElement('div');
   row.className = 'matrix_row';
   row.id = id;
-  row.innerHTML = getMoreColumns(currentMatrix, currentRows, currentColumns);
+  row.innerHTML = getMoreColumns(currentRows, currentColumns);
   var table = document.getElementById(matrix_row + (currentRows - 1));
   var cont = table.parentNode;
   cont.appendChild(row); // тогда добавляем в конец родительского элемента
@@ -79,6 +79,22 @@ function AddRow() {
 }
 
 function AddColumn() {
+  var currentRows = currentMatrix === 'A' ? matrixARows : matrixBRows;
+  var currentColumns = currentMatrix === 'A' ? matrixAColumns : matrixBColumns;
+  currentColumns++;
+  var column = document.createElement('input');
+  column.type = 'text';
+  column.className = 'matrix_cell';
+  column.placeholder = '';
+  column.size = '16';
+  column.id = '';
+  column.value = '';
+  column.autocomplete = 'off';
+  column.disabled = currentMatrix === 'C' ? "disabled" : "";
+  for (var i = 1; i <= currentRows; i++) {
+
+  }
+  var table = document.getElementById('matrix_cell' + currentMatrix + i + (currentColumns - 1));
   console.log("Add Column Matrix" + currentMatrix);
 }
 
@@ -90,11 +106,17 @@ function RemoveColumn() {
   console.log("Remove Column Matrix" + currentMatrix);
 }
 
-function getMoreColumns(matrix, rows, columns) {
+function getMoreColumns(rows, columns) {
   var htmlString = "";
   for (var i = 1; i <= columns; i++) {
-    htmlString += insertColumn(matrix, rows, i);
+    htmlString += insertColumn(currentMatrix, rows, i);
   }
+  return htmlString;
+}
+
+function getMoreRows() {
+  var htmlString = "";
+
   return htmlString;
 }
 
